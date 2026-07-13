@@ -1,4 +1,0 @@
-pandas
-faker
-numpy
-tqdm
