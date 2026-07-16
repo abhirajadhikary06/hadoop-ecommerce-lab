@@ -1,0 +1,21 @@
+scan 'top_customers',
+{
+  FILTER => "ValueFilter(>=,'binary:1000')",
+  LIMIT => 10
+}
+
+scan 'payment_analysis',
+{
+  COLUMNS => ['info:revenue']
+}
+
+scan 'monthly_sales',
+{
+  STARTROW => '2025-01',
+  STOPROW  => '2025-06'
+}
+
+scan 'revenue_by_category',
+{
+  COLUMNS => ['info:revenue']
+}

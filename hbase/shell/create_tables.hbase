@@ -1,0 +1,4 @@
+create 'top_customers', 'info'
+create 'monthly_sales', 'info'
+create 'payment_analysis', 'info'
+create 'revenue_by_category', 'info'

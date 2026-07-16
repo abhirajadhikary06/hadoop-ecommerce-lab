@@ -1,0 +1,46 @@
+FROM eclipse-temurin:8-jdk
+
+ENV HBASE_VERSION=2.6.3
+ENV HBASE_HOME=/opt/hbase
+ENV JAVA_HOME=/opt/java/openjdk
+ENV HADOOP_CONF_DIR=/etc/hadoop
+ENV HBASE_CONF_DIR=/opt/hbase/conf
+ENV PATH=$PATH:$HBASE_HOME/bin
+
+# Install required packages
+RUN apt-get update && \
+    apt-get install -y \
+        wget \
+        curl \
+        netcat-openbsd \
+        procps \
+        openssh-client && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Apache HBase
+RUN wget https://archive.apache.org/dist/hbase/${HBASE_VERSION}/hbase-${HBASE_VERSION}-bin.tar.gz && \
+    tar -xzf hbase-${HBASE_VERSION}-bin.tar.gz && \
+    mv hbase-${HBASE_VERSION} ${HBASE_HOME} && \
+    rm hbase-${HBASE_VERSION}-bin.tar.gz
+
+# Create Hadoop configuration directory
+RUN mkdir -p /etc/hadoop
+
+# Copy Hadoop configuration
+COPY hadoop/core-site.xml /etc/hadoop/
+COPY hadoop/hdfs-site.xml /etc/hadoop/
+COPY hadoop/mapred-site.xml /etc/hadoop/
+COPY hadoop/yarn-site.xml /etc/hadoop/
+
+# Copy HBase configuration
+COPY hbase/hbase-site.xml ${HBASE_HOME}/conf/
+COPY hbase/regionservers ${HBASE_HOME}/conf/
+
+# Startup script
+COPY hbase/start-hbase.sh /usr/local/bin/start-hbase.sh
+
+RUN chmod +x /usr/local/bin/start-hbase.sh
+
+WORKDIR ${HBASE_HOME}
+
+CMD ["/usr/local/bin/start-hbase.sh"]

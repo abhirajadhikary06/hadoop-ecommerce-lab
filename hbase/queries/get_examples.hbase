@@ -1,0 +1,4 @@
+get 'top_customers','0005a01b-ff4e-4095-911a-752816d2657e'
+get 'monthly_sales','2024-07'
+get 'payment_analysis','PayPal'
+get 'revenue_by_category','Electronics'

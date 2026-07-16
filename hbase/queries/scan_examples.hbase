@@ -1,0 +1,15 @@
+echo "===== TOP CUSTOMERS ====="
+count 'top_customers'
+scan 'top_customers', {LIMIT => 5}
+
+echo "===== MONTHLY SALES ====="
+count 'monthly_sales'
+scan 'monthly_sales'
+
+echo "===== PAYMENT ANALYSIS ====="
+count 'payment_analysis'
+scan 'payment_analysis'
+
+echo "===== REVENUE BY CATEGORY ====="
+count 'revenue_by_category'
+scan 'revenue_by_category'

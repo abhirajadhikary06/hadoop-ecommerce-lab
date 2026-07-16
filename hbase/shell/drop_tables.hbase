@@ -1,0 +1,8 @@
+disable 'top_customers'
+drop 'top_customers'
+disable 'monthly_sales'
+drop 'monthly_sales'
+disable 'payment_analysis'
+drop 'payment_analysis'
+disable 'revenue_by_category'
+drop 'revenue_by_category'

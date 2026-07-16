@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Store HBase data in HDFS -->
+    <property>
+        <name>hbase.rootdir</name>
+        <value>hdfs://namenode:9000/hbase</value>
+    </property>
+
+    <!-- Embedded ZooKeeper -->
+    <property>
+        <name>hbase.cluster.distributed</name>
+        <value>false</value>
+    </property>
+
+    <property>
+        <name>hbase.zookeeper.property.dataDir</name>
+        <value>/opt/hbase/zookeeper</value>
+    </property>
+
+    <property>
+        <name>hbase.tmp.dir</name>
+        <value>/opt/hbase/tmp</value>
+    </property>
+
+    <property>
+        <name>hbase.unsafe.stream.capability.enforce</name>
+        <value>false</value>
+    </property>
+
+</configuration>
