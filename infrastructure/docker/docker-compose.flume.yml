@@ -1,0 +1,40 @@
+services:
+
+  flume:
+
+    build:
+      context: ../..
+      dockerfile: infrastructure/docker/Dockerfiles/Dockerfile.flume
+
+    image: flume-custom:1.11.0
+
+    container_name: flume
+
+    hostname: flume
+
+    restart: unless-stopped
+
+    environment:
+      FLUME_HOME: /opt/flume
+      HADOOP_HOME: /opt/hadoop
+      HADOOP_CONF_DIR: /opt/hadoop/etc/hadoop
+      FLUME_CONF_DIR: /opt/flume/conf
+
+    volumes:
+
+      - ../flume/conf/flume.conf:/opt/flume/conf/flume.conf:ro
+      - ../flume/conf/log4j.properties:/opt/flume/conf/log4j.properties:ro
+
+      - ../hadoop/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml:ro
+      - ../hadoop/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml:ro
+
+      - ../../ingestion/flume/logs:/logs
+
+    networks:
+      - hadoop-network
+
+networks:
+
+  hadoop-network:
+    external: true
+    name: hadoop-network
