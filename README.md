@@ -1,6 +1,12 @@
+Here's the updated README with **Apache Cassandra** integrated naturally into the project flow.
+
+---
+
 # Ecommerce Hadoop Big Data
 
 A comprehensive collection of practical notes documenting the implementation of an end-to-end **e-commerce big data pipeline** using the Hadoop ecosystem. The project demonstrates how structured, semi-structured, and streaming data can be ingested, processed, stored, and analyzed using industry-standard big data technologies.
+
+The project also includes **Apache Cassandra** to demonstrate distributed NoSQL database concepts and operational data storage commonly used in modern data engineering systems.
 
 The notes serve as a practical reference for building and understanding a complete batch and streaming data engineering workflow rather than individual technology tutorials.
 
@@ -31,7 +37,6 @@ These datasets are processed through different components of the Hadoop ecosyste
   Order Data   Application Logs   Clickstream
         │            │              │
         │            │          Apache Kafka
-        │            │              │
         │        Apache Flume       │
         └────────────┬──────────────┘
                      ▼
@@ -42,6 +47,10 @@ These datasets are processed through different components of the Hadoop ecosyste
          ┌───────────┴───────────┐
          ▼                       ▼
       Apache Hive           Apache HBase
+         │                       │
+         └───────────┬───────────┘
+                     ▼
+             Apache Cassandra
                      │
                      ▼
              Business Analytics
@@ -56,6 +65,7 @@ These datasets are processed through different components of the Hadoop ecosyste
 * Apache Pig
 * Apache Hive
 * Apache HBase
+* Apache Cassandra
 * Apache Flume
 * Apache Kafka
 * Docker
@@ -129,6 +139,33 @@ Includes:
 
 ---
 
+## Apache Cassandra
+
+Distributed wide-column NoSQL database implementation for handling operational e-commerce data.
+
+Topics include:
+
+* Cluster setup
+* Keyspaces
+* Table design
+* CRUD operations
+* Bulk CSV loading
+* Secondary Indexes
+* TTL
+* Lightweight Transactions (LWT)
+* Batch Operations
+* Collection Data Types
+* Replication Strategy
+* Consistency Levels
+* SSTables
+* Compaction
+* Gossip Protocol
+* Hinted Handoff
+* Repair
+* Read and Write Path concepts
+
+---
+
 ## Apache Flume
 
 Log ingestion pipeline for application monitoring.
@@ -170,38 +207,4 @@ The project simulates the data platform of an e-commerce company by integrating 
 * Website clickstream events
 * Application logs
 
-The data is processed through different stages of the Hadoop ecosystem to produce analytics-ready datasets that can be queried, stored, and further analyzed.
-
----
-
-# What These Notes Include
-
-* Complete implementation workflow
-* Practical command references
-* Docker-based setup
-* Configuration examples
-* ETL pipeline implementation
-* Streaming data pipeline
-* Log ingestion pipeline
-* Data warehouse implementation
-* NoSQL implementation
-* End-to-end Hadoop ecosystem integration
-
----
-
-# Intended Audience
-
-These notes are intended for:
-
-* Students learning Big Data
-* Aspiring Data Engineers
-* Backend Engineers exploring Hadoop
-* Interview preparation
-* Practical revision and reference
-* Anyone building hands-on Hadoop ecosystem projects
-
----
-
-# Learning Outcome
-
-After completing these practicals, readers will understand how to build an end-to-end data engineering pipeline that combines distributed storage, resource management, batch ETL, log ingestion, event streaming, data warehousing, and NoSQL storage using a realistic e-commerce use case.
+The data is processed through different stages of the Hadoop ecosystem to produce analytics-ready datasets that can be queried, stored, served, and further analyzed using both warehouse and NoSQL technologies.
