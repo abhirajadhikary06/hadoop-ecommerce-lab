@@ -209,5 +209,7 @@ The project simulates the data platform of an e-commerce company by integrating 
 
 The data is processed through different stages of the Hadoop ecosystem to produce analytics-ready datasets that can be queried, stored, served, and further analyzed using both warehouse and NoSQL technologies.
 
-*Conceptual Notes: https://app.notion.com/p/Hadoop-Ecosystem-3926635a6bee8083ad91ddabac252eac?source=copy_link*
-*Implementation Documentation: https://app.notion.com/p/Hadoop-Practical-3a06635a6bee8043bc2deba3e7918e70?source=copy_link*
+*Conceptual Notes:* https://app.notion.com/p/Hadoop-Ecosystem-3926635a6bee8083ad91ddabac252eac?source=copy_link
+
+*Implementation Documentation:* https://app.notion.com/p/Hadoop-Practical-3a06635a6bee8043bc2deba3e7918e70?source=copy_link
+
