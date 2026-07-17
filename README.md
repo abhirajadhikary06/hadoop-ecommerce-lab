@@ -1,4 +1,6 @@
-Here's the updated README with **Apache Cassandra** integrated naturally into the project flow.
+<p align="center">
+  <img width="2974" height="1094" alt="image" src="https://github.com/user-attachments/assets/e144db84-929a-4242-90dd-bd12f7d33e44" />
+</p>
 
 ---
 
