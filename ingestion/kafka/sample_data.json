@@ -1,0 +1,12 @@
+[
+    {
+        "order_id": 1,
+        "customer": "Alice",
+        "amount": 1200
+    },
+    {
+        "order_id": 2,
+        "customer": "Bob",
+        "amount": 450
+    }
+]
